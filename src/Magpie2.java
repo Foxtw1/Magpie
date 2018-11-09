@@ -1,3 +1,5 @@
+import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
+
 /**
  * A program to carry on conversations with a human user. This is the initial
  * version that:
@@ -38,7 +40,39 @@ public class Magpie2 {
 				|| statement.indexOf("sister") >= 0
 				|| statement.indexOf("brother") >= 0) {
 			response = "Tell me more about your family.";
-		} else {
+			
+		} 
+		else if (statement.indexOf("cat") >= 0
+				|| statement.indexOf("dog") >= 0
+				|| statement.indexOf("fish") >= 0
+				|| statement.indexOf("pet") >= 0) {
+			response = "Tell me more about your pets.";
+		}
+		else if (statement.indexOf("Mr. Padjen") >= 0
+				|| statement.indexOf("Padjen") >= 0
+				|| statement.indexOf("daddy") >= 0
+				|| statement.indexOf("computer science") >= 0) {
+			response = "Sorry, I wasn't listening. I was too busy being attracted.";
+		}
+		else if(statement.length() < 2){
+			response = "Say something you garbage person.";
+
+		}
+		else if (statement.indexOf("no") >= 0) {
+			response = "Yes you Commie.";
+		}
+		else if (statement.indexOf("you are ") >= 0) {
+			int i = 0;
+			while(i == 0){
+				response = "No you.";
+				System.out.println(response);
+			}
+		}
+		else if (statement.indexOf("plans") >= 0) {
+			response = "My plans depend on what you are doing. On a scale of 1 to America how free are you tonight?";
+		}
+		
+		else {
 			response = getRandomResponse();
 		}
 		return response;
@@ -63,6 +97,12 @@ public class Magpie2 {
 			response = "Do you really think so?";
 		} else if (whichResponse == 3) {
 			response = "You don't say.";
+		}
+		else if(whichResponse == 4){
+			response = "What are you talking about kiddo.";
+		}
+		else if(whichResponse == 5){
+			response = "Ok then.";
 		}
 
 		return response;
