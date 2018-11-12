@@ -36,7 +36,19 @@ public class Magpie3 {
 				|| findKeyword(statement, "sister") >= 0
 				|| findKeyword(statement, "brother") >= 0) {
 			response = "Tell me more about your family.";
-		} else {
+		}
+		else if (findKeyword(statement, "cat") >= 0
+		|| findKeyword(statement, "dog") >= 0
+		|| findKeyword(statement, "bird") >= 0
+		|| findKeyword(statement, "fish") >= 0) {
+			response = "Tell me more about your pets.";
+		}
+		else if (findKeyword(statement, "snow") >= 0
+		|| findKeyword(statement, "rain") >= 0
+		|| findKeyword(statement, "sunny") >= 0) {
+			response = "Tell me more about the weather.";
+		}
+		else {
 			response = getRandomResponse();
 		}
 		return response;
@@ -58,7 +70,7 @@ public class Magpie3 {
 	 */
 	private int findKeyword(String statement, String goal, int startPos) {
 		String phrase = statement.trim().toLowerCase();
-		goal = goal.toLowerCase();
+		goal = goal.toLowerCase(); 
 
 		// The only change to incorporate the startPos is in
 		// the line below
